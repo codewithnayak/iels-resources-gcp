@@ -1,7 +1,8 @@
 resource "random_string" "bucket_name_random_string" {
   length = 8
-  special = false
   lower = true
+  upper = false
+  special = false
   #override_special = "/@£$"  # You can customize special characters
 }
 
