@@ -10,7 +10,7 @@ output "random_string_result" {
 }
 
 resource "google_storage_bucket" "my_bucket" {
-  name     = "iels-bucket-" + random_string.bucket_name_random_string.result
+  name     = "iels-bucket-${random_string.bucket_name_random_string.result}"
   location = var.region
   labels = {
     journey = local.journey
