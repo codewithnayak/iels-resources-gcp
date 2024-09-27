@@ -4,5 +4,3 @@ terraform {
     prefix     = "iam"  # Optional: Set a prefix for your state files
   }
 }
-
-
