@@ -19,6 +19,7 @@ variable "name" {
 
 variable "display_name" {
   type = string
+  default = "Servcie account test display name"
 }
 
 variable "service_account_id" {
