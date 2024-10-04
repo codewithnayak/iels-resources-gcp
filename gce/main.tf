@@ -14,7 +14,7 @@ resource "google_compute_instance" "vm_instance" {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2204-lts"
       labels = {
-        project = "IELS"
+        project = "iels"
       }
     }
   }
@@ -30,7 +30,7 @@ resource "google_compute_instance" "vm_instance" {
    metadata = {
     automated = true
     tf = "yes"
-    prject = "IELS"
+    prject = "iels"
   }
 
   metadata_startup_script = "echo hi > /test.txt"
