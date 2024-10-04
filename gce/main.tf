@@ -8,7 +8,7 @@ resource "google_compute_instance" "vm_instance" {
   machine_type = var.machine_type
   zone         = var.zone
 
-  tags = ["project", "IELS"]
+  tags = ["project", "iels"]
 
   boot_disk {
     initialize_params {
