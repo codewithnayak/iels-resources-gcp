@@ -7,6 +7,11 @@ variable "region" {
   }
 }
 
+variable "zone" {
+  type = string
+  default = "europe-west2-b"
+}
+
 variable "project" {
   type = string
   default = "primeval-nectar-431120-j5"

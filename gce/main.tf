@@ -6,9 +6,9 @@ resource "google_service_account" "default" {
 resource "google_compute_instance" "vm_instance" {
   name         = var.name
   machine_type = var.machine_type
-  zone         = var.region
+  zone         = var.zone
 
-  tags = ["foo", "bar"]
+  tags = ["project", "IELS"]
 
   boot_disk {
     initialize_params {
