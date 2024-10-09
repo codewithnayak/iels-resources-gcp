@@ -1,4 +1,4 @@
-resource "google_compute_instance_template" "example_template" {
+resource "google_compute_instance_template" "iels_instance_template" {
   name         = var.instance_template_name
   machine_type = var.machine_type
 
@@ -20,13 +20,13 @@ resource "google_compute_instance_template" "example_template" {
   tags = var.allow_http ? ["http-server"] : []
 }
 
-resource "google_compute_instance_group_manager" "example_group" {
+resource "google_compute_instance_group_manager" "iels_instance_group" {
   name               = var.instance_group_name
   base_instance_name = var.instance_group_base_name
   zone               = var.zone
   target_size        = var.size
   version {
-    instance_template = google_compute_instance_template.example_template.self_link
+    instance_template = google_compute_instance_template.iels_instance_template.self_link
   }
 }
 
@@ -45,8 +45,8 @@ resource "google_compute_firewall" "default" {
 }
 
 data "google_compute_instance" "example_instances" {
-  count = google_compute_instance_group_manager.example_group.target_size
-  name  = format("%s-%s", google_compute_instance_group_manager.example_group.base_instance_name, count.index)
-  zone  = google_compute_instance_group_manager.example_group.zone
+  count = google_compute_instance_group_manager.iels_instance_group.target_size
+  name  = format("%s-%s", google_compute_instance_group_manager.iels_instance_group.base_instance_name, count.index)
+  zone  = google_compute_instance_group_manager.iels_instance_group.zone
 }
 
