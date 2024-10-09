@@ -44,15 +44,15 @@ resource "google_compute_firewall" "default" {
   target_tags   = ["http-server"]
 }
 
-data "google_compute_instance_group_manager" "mig" {
-  name = var.instance_group_name      # Replace with your Managed Instance Group name
-  zone = var.zone      # Replace with your MIG zone
-}
+# data "google_compute_instance_group_manager" "mig" {
+#   name = var.instance_group_name      # Replace with your Managed Instance Group name
+#   zone = var.zone      # Replace with your MIG zone
+# }
 
-data "google_compute_instance" "example_instances" {
-  # Loop through each instance in the MIG
-  for_each = data.google_compute_instance_group_manager.mig.instance_group.self_link
-  zone     = var.zone  # Replace with the zone your instances are in
-  self_link = each.value      # Get each instance's self-link
-}
+# data "google_compute_instance" "example_instances" {
+#   # Loop through each instance in the MIG
+#   for_each = data.google_compute_instance_group_manager.mig.instance_group.self_link
+#   zone     = var.zone  # Replace with the zone your instances are in
+#   self_link = each.value      # Get each instance's self-link
+# }
 
