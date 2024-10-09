@@ -1,15 +1,16 @@
 #¡/bin/bash
 ## Change your project id , if needed
+## TODO: Parameterized script execution
 project="primeval-nectar-431120-j5"
 sa="terraform-service-account@primeval-nectar-431120-j5.iam.gserviceaccount.com"
-role="roles/iam.serviceAccountCreator"
+role="roles/iam.serviceAccountAdmin"
 set -e
 
 gcloud config set project $project
 
 gcloud projects add-iam-policy-binding $project \
     --member="serviceAccount:terraform-service-account@primeval-nectar-431120-j5.iam.gserviceaccount.com" \
-    --role="roles/iam.serviceAccountCreator"
+    --role="roles/iam.serviceAccountAdmin"
 
 ##Check assigned roles
 echo "*** Check assigned roles $project $sa ***"
