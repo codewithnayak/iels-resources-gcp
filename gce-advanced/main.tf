@@ -50,7 +50,3 @@ data "google_compute_instance" "example_instances" {
   zone  = google_compute_instance_group_manager.example_group.zone
 }
 
-output "external_ips" {
-  value = [for instance in data.google_compute_instance.example_instances : instance.network_interface.access_config.nat_ip]
-}
-
