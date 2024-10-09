@@ -53,3 +53,29 @@ variable "network" {
   type = string
   default = "default"
 }
+
+variable "size" {
+  type = number
+  default = 2
+}
+
+variable "instance_template_name" {
+  type = string
+  default = "iels-ubuntu-instance-template"
+}
+
+variable "instance_group_name" {
+  type = string
+  default = "iels-ubuntu-managed-instance"
+}
+
+variable "instance_group_base_name" {
+  type = string
+  default = "iels-ubuntu-managed-instance-base"
+}
+
+variable "allow_http" {
+  description = "Whether to allow HTTP traffic"
+  type        = bool
+  default     = true
+}

@@ -8,7 +8,7 @@ resource "google_compute_instance" "vm_instance" {
   machine_type = var.machine_type
   zone         = var.zone
 
-  tags = ["project", "iels"]
+  tags = var.tags
 
   boot_disk {
     initialize_params {
@@ -20,18 +20,14 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   network_interface {
-    network = "default"
+    network = var.network
 
     access_config {
       // Ephemeral  public IP
     }
   }
 
-   metadata = {
-    automated = true
-    tf = "yes"
-    prject = "iels"
-  }
+  metadata = var.metadata
 
   metadata_startup_script = "echo hi > /test.txt"
 
