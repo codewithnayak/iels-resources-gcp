@@ -46,7 +46,7 @@ resource "google_compute_firewall" "default" {
 
 data "google_compute_instance" "example_instances" {
   count = google_compute_instance_group_manager.iels_instance_group.target_size
-  name  = format("%s-%s", google_compute_instance_group_manager.iels_instance_group.base_instance_name, count.index)
+  name  = google_compute_instance_group_manager.iels_instance_group.base_instance_name
   zone  = google_compute_instance_group_manager.iels_instance_group.zone
 }
 
