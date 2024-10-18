@@ -3,7 +3,7 @@ pipeline{
 
     agent{
         kubernetes{
-            yamlFile 'pipleines/templates/terraform.yaml'
+            yamlFile 'pipleine/templates/terraform.yaml'
             retries 2
         }
     }
