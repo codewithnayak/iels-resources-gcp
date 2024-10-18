@@ -5,7 +5,7 @@ metadata:
   labels:
     name: terraform
 spec:
-  serviceAccountName: terraform-service-account
+  serviceAccountName: terraform-default-svc-account
   automountServiceAccountToken: false
   containers:
     - name: jnlp
