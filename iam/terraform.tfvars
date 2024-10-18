@@ -1,4 +1,4 @@
 region = "europe-west2"
-roles = [ "roles/container.admin" , "roles/storage.admin"]
-name = "iels-dev-svc"
-display_name = "iels-dev-svc"
+roles = ["roles/iam.serviceAccountAdmin"]
+name = "terraform-iam-svc-account"
+display_name = "terraform-iam-svc-account"
