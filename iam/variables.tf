@@ -9,7 +9,7 @@ variable "region" {
 
 variable "project" {
   type = string
-  default = "primeval-nectar-431120-j5"
+  default = "keen-ally-438611-t7"
 }
 
 variable "roles" {
@@ -22,4 +22,18 @@ variable "name" {
 
 variable "display_name" {
   type = string
+}
+
+variable "k8s_namespace" {
+  type = string
+  default = "jenkins"
+}
+
+variable "k8s-sa" {
+  type = string
+}
+
+variable "isWorkload" {
+  type = bool
+  default = false
 }

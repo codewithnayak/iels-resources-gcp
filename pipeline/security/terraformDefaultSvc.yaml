@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: terraform-default-svc-account
+  namespace: jenkins
+  annotations:
+    iam.gke.io/gcp-service-account: terraform-default-svc-account@keen-ally-438611-t7.iam.gserviceaccount.com
