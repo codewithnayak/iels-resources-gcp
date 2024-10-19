@@ -3,14 +3,14 @@
 ## TODO: Parameterized script execution
 project="keen-ally-438611-t7"
 sa="terraform-default-svc-account@keen-ally-438611-t7.iam.gserviceaccount.com"
-role="roles/compute.admin"
+role="roles/resourcemanager.projectIamAdmin"
 set -e
 
 gcloud config set project $project
 
 gcloud projects add-iam-policy-binding $project \
     --member="serviceAccount:terraform-default-svc-account@keen-ally-438611-t7.iam.gserviceaccount.com" \
-    --role="roles/compute.admin"
+    --role="roles/resourcemanager.projectIamAdmin"
 
 ##Check assigned roles
 echo "*** Check assigned roles $project $sa ***"
